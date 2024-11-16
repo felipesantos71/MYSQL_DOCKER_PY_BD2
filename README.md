@@ -1,5 +1,7 @@
 # MYSQL_DOCKER_PY_BD2
 
+Aluno: Felipe Mateus
+
 Atividade
 Objetivo:
 Criar um CRUD para um usuário:
