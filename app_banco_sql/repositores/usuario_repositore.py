@@ -1,4 +1,4 @@
-from models.usuario_model import Usuario
+from app_banco_sql.models.usuario_model import Usuario
 from sqlalchemy.orm import Session
 
 class UsuarioRepository:
@@ -8,7 +8,7 @@ class UsuarioRepository:
     def salvar_usuario(self, usuario: Usuario):
         self.session.add(usuario)
         self.session.commit()
-        self.session.refresh()
+        self.session.refresh(usuario)
 
     def pesquisar_usuario_por_email(self, email: str):
         return self.session.query(Usuario).filter_by(email = email).first()
@@ -16,8 +16,10 @@ class UsuarioRepository:
     def excluir_usuario(self, usuario: Usuario):
         self.session.delete(usuario)
         self.session.commit()
-        self.session.refresh(usuario)
 
     def listar_usuarios(self):
         return self.session.query(Usuario).all()
-        
+    
+    def atualizar_usuario(self, usuario: Usuario):
+        self.session.commit()
+        self.session.refresh(usuario)
