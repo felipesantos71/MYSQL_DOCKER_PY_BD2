@@ -49,8 +49,8 @@ class UsuarioService:
 
             if cadastroEmail:
                 cadastroEmail.nome = input("Digite um novo nome para o usuario: ")
-                cadastroEmail.nome = input("Digite um novo email para o usuario: ")
-                cadastroEmail.nome = input("Digite uma nova senha para o usuario: ")
+                cadastroEmail.email = input("Digite um novo email para o usuario: ")
+                cadastroEmail.senha = input("Digite uma nova senha para o usuario: ")
                 self.repository.atualizar_usuario(cadastroEmail)
                 print("\nDados Atualizados com sucesso.")
             else:

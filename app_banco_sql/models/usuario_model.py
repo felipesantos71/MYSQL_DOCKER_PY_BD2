@@ -19,12 +19,13 @@ class Usuario(Base):
         self.email = self._verificando_valor_tipo(email)
         self.senha = self._verificando_valor_tipo(senha)
 
-    def _verificar_valor_tipo(valor, self):
+    def _verificando_valor_tipo(self, valor):
         if not isinstance(valor, str):
             raise TypeError("Tipo do valor inválido.")
         if not valor.strip():
             raise ValueError("Não é permitido informação nula.")
         return valor
+
     
 #Criando tabela no banco de dados.
 Base.metadata.create_all(bind=db)

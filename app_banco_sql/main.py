@@ -28,25 +28,25 @@ def main():
         os.system("cls || clear")
 
         match(resposta):
-            case 1:        
+            case "1":        
                 print("Cadastrando novo usuário.")
-                novoNome = input("Digite seu nome: ")
-                novoEmail = input("Digite seu email: ")
-                novaSenha = input("Digite seu senha: ")
+                nome = input("Digite seu nome: ")
+                email = input("Digite seu email: ")
+                senha = input("Digite seu senha: ")
 
-                service.criar_usuario(nome=novoNome,email=novoEmail,senha=novaSenha)
-            case 2:
+                service.criar_usuario(nome=nome,email=email,senha=senha)
+            case "2":
                 service.pesquisar_unico_usuario()
-            case 3:
+            case "3":
                 service.atualizar_dados_usuario()
-            case 4:
+            case "4":
                 service.excluir_dados_usuario()
-            case 5:
+            case "5":
                 print("\nListando usuarios cadastrados.")
                 lista_usuarios = service.listar_todos_usuarios()
                 for usuario in lista_usuarios:
                     print(f"Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}")
-            case 0:
+            case "0":
                 break
             case _:
                 print("Opção digitada inválida tente novamente!")
